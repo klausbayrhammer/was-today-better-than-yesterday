@@ -1,7 +1,7 @@
 <template>
-  <li class="focus-point">
-    {{name}}
-    <input class="focus-point__deleted"
+  <li class="focus-area">
+    <span class="focus-area__name">{{name}}</span>
+    <input class="focus-area__deleted"
            type="checkbox"
            v-bind:checked="deleted"
            v-model="deleted" />
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'FocusPoint',
+  name: 'FocusArea',
   props: ['name', 'initialDeleted'],
   data: function () {
     return {

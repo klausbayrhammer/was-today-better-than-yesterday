@@ -1,22 +1,30 @@
 <template>
   <div id="app">
-    <FocusPoints/>
+    <FocusAreaList v-bind:focus-areas="focusAreas"/>
   </div>
 </template>
 
 <script>
-import FocusPoints from './components/FocusPoints'
+import FocusAreaList from './components/FocusAreaList'
 
 export default {
   name: 'App',
+  data: function () {
+    return {
+      focusAreas: [
+        {name: 'Punctuality', deleted: false},
+        {name: 'TDD', deleted: true}
+      ]
+    }
+  },
   components: {
-    FocusPoints
+    FocusAreaList
   }
 }
 </script>
 
 <style>
-#app {
-  margin-top: 60px;
-}
+  #app {
+    margin-top: 60px;
+  }
 </style>
