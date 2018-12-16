@@ -3,12 +3,13 @@
     <span class="focus-area__name">{{name}}</span>
     <input class="focus-area__deleted"
            type="checkbox"
-           v-bind:checked="deleted"
            v-model="deleted" />
   </li>
 </template>
 
 <script>
+import deleteFocusArea from './delete-focus-area'
+
 export default {
   name: 'FocusArea',
   props: ['name', 'initialDeleted'],
@@ -19,7 +20,7 @@ export default {
   },
   watch: {
     deleted: function () {
-      console.log('toggledelete', this.deleted)
+      deleteFocusArea(this.name, this.deleted)
     }
   }
 }
