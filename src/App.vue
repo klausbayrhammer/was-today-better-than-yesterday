@@ -12,8 +12,8 @@ export default {
   data: function () {
     return {
       focusAreas: [
-        {name: 'Punctuality', deleted: false},
-        {name: 'TDD', deleted: true}
+        {id: '123', name: 'Punctuality', deleted: false},
+        {id: '234', name: 'TDD', deleted: true}
       ]
     }
   },

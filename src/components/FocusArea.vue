@@ -1,6 +1,7 @@
 <template>
   <li class="focus-area">
-    <span class="focus-area__name">{{name}}</span>
+    <input class="focus-area__name-field" type="text" v-if="editMode" v-model="name" @change="updateDescription" />
+    <span class="focus-area__name" v-else v-on:click="toggleEdit" >{{name}}</span>
     <input class="focus-area__deleted"
            type="checkbox"
            v-model="deleted" />
@@ -9,13 +10,24 @@
 
 <script>
 import deleteFocusArea from './delete-focus-area'
+import updateFocusAreaDescription from './update-focus-area-description'
 
 export default {
   name: 'FocusArea',
-  props: ['name', 'initialDeleted'],
+  props: ['id', 'initialName', 'initialDeleted', 'initalEditMode'],
   data: function () {
     return {
+      name: this.initialName,
+      editMode: this.initalEditMode,
       deleted: this.initialDeleted
+    }
+  },
+  methods: {
+    toggleEdit () {
+      this.editMode = !this.editMode
+    },
+    updateDescription () {
+      updateFocusAreaDescription({id: this.id, name: this.name})
     }
   },
   watch: {

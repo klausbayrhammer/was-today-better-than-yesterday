@@ -3,7 +3,8 @@
     <FocusArea
         v-for="focusArea in focusAreas"
         v-bind:key="focusArea.name"
-        v-bind:name="focusArea.name"
+        v-bind:initial-name="focusArea.name"
+        v-bind:id="focusArea.id"
         v-bind:initial-deleted="focusArea.deleted"/>
   </ul>
 </template>
