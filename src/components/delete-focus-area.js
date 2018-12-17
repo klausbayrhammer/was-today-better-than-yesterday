@@ -1,3 +1,3 @@
-export default (name, deleted) => {
+export default ({name, deleted}) => {
   console.log(name, deleted)
 }
