@@ -31,7 +31,7 @@ export default {
     }
   },
   watch: {
-    deleted: function () {
+    deleted () {
       deleteFocusArea({deleted: this.deleted, name: this.name})
     }
   }
