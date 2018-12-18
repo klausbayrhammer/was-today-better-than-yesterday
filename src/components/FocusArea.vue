@@ -1,7 +1,7 @@
 <template>
   <li class="focus-area">
     <input class="focus-area__name-field" type="text" v-if="editMode" v-model="name" @change="updateDescription" />
-    <span class="focus-area__name" v-else v-on:click="toggleEdit" >{{name}}</span>
+    <span class="focus-area__name" v-else @click="toggleEdit" >{{name}}</span>
     <input class="focus-area__deleted"
            type="checkbox"
            v-model="deleted" />

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FocusAreaList v-bind:focus-areas="focusAreas"/>
+    <FocusAreaList v-bind:initial-focus-areas="focusAreas"/>
   </div>
 </template>
 
