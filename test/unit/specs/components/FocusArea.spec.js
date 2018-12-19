@@ -17,11 +17,11 @@ describe('FocusArea.vue', () => {
 
   it('marks a focus area as deleted when clicking the delete checkbox', done => {
     const wrapper = mount(FocusArea, {
-      propsData: {initialName: 'focusAreaName', deleted: false}
+      propsData: {id: 'id', initialName: 'focusAreaName', deleted: false}
     })
 
     deleteFocusArea.mockImplementation((args) => {
-      expect(args).toEqual({name: 'focusAreaName', deleted: true})
+      expect(args).toEqual({id: 'id', deleted: true})
       done()
     })
     wrapper.find('.focus-area__deleted').trigger('click')

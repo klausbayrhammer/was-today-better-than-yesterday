@@ -1,5 +1,5 @@
-import firebase from 'firebase/app'
-import 'firebase/database'
+const firebase = require('firebase/app')
+require('firebase/database')
 
 // TODO: Replace with your project's config object
 var config = {
@@ -12,7 +12,7 @@ var config = {
 }
 firebase.initializeApp(config)
 
-export default firebase.database()
+firebase.database().ref('/focusAreas/0/deleted').set(true);
 
 firebase.database().ref('/focusAreas').once('value').then(function (snapshot) {
   console.log(snapshot.val())
