@@ -1,6 +1,8 @@
 import {mount} from '@vue/test-utils'
 import FocusAreaList from '@/components/FocusAreaList'
 
+jest.mock('uuid/v4', () => () => 'id1')
+
 describe('FocusAreaList.vue', () => {
   it('should render all focus points', () => {
     const wrapper = mount(FocusAreaList, {
@@ -21,6 +23,6 @@ describe('FocusAreaList.vue', () => {
       }
     })
     wrapper.find('.focus-area-list__add-focus-area').trigger('click')
-    expect(wrapper.findAll('.focus-area').length).toEqual(1)
+    expect(wrapper.vm.focusAreas).toEqual([{id: 'id1', deleted: false, editMode: true}])
   })
 })

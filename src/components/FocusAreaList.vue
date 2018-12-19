@@ -15,6 +15,7 @@
 
 <script>
 import FocusArea from './FocusArea'
+import uuid from 'uuid/v4'
 
 export default {
   name: 'FocusAreas',
@@ -29,7 +30,7 @@ export default {
   },
   methods: {
     addFocusArea () {
-      this.focusAreas.push({id: 123, editMode: true})
+      this.focusAreas.push({id: uuid(), editMode: true, deleted: false})
     }
   }
 }
