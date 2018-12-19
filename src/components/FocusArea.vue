@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import deleteFocusArea from './delete-focus-area'
-import updateFocusAreaDescription from './update-focus-area-description'
+import deleteFocusArea from '../database/delete-focus-area'
+import updateFocusAreaDescription from '../database/update-focus-area-description'
 
 export default {
   name: 'FocusArea',

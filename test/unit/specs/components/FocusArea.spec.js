@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import { mount } from '@vue/test-utils'
 import FocusArea from '@/components/FocusArea'
-import deleteFocusArea from '@/components/delete-focus-area'
-import updateFocusAreaName from '@/components/update-focus-area-description'
+import deleteFocusArea from '@/database/delete-focus-area'
+import updateFocusAreaName from '@/database/update-focus-area-description'
 
-jest.mock('@/components/delete-focus-area')
-jest.mock('@/components/update-focus-area-description')
+jest.mock('@/database/delete-focus-area')
+jest.mock('@/database/update-focus-area-description')
 
 describe('FocusArea.vue', () => {
   it('shows the name of the focus are', () => {
