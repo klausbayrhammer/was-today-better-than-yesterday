@@ -28,6 +28,7 @@ export default {
     },
     updateDescription () {
       updateFocusAreaDescription({id: this.id, name: this.name})
+      this.editMode = false
     }
   },
   watch: {

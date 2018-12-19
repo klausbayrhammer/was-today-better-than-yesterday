@@ -52,11 +52,11 @@ describe('FocusArea.vue', () => {
 
     updateFocusAreaName.mockImplementation((args) => {
       expect(args).toEqual({id: 'id', name: 'changedFocusAreaName'})
+      expect(wrapper.vm.editMode).toEqual(false)
       done()
     })
 
     wrapper.find('.focus-area__name-field').element.value = 'changedFocusAreaName'
-    await Vue.nextTick()
     wrapper.find('.focus-area__name-field').trigger('input')
     wrapper.find('.focus-area__name-field').trigger('change')
   })
