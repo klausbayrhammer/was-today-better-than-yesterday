@@ -35,7 +35,7 @@ describe('FocusArea.vue', () => {
     expect(wrapper.find('.focus-area__name-field').element.value).toEqual('focusAreaName')
   })
 
-  it('is possible to toggle focus areas to edit stateedit the name of a focus area', async () => {
+  it('is possible to toggle focus areas to edit state', async () => {
     const wrapper = mount(FocusArea, {
       propsData: {initialName: 'focusAreaName', deleted: false}
     })
