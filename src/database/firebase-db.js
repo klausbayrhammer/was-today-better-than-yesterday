@@ -1,4 +1,5 @@
-import firebaseDb from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/database'
 
 // TODO: Replace with your project's config object
 var config = {
@@ -9,9 +10,9 @@ var config = {
   storageBucket: 'was-today-better.appspot.com',
   messagingSenderId: '946780991971'
 }
-firebaseDb.initializeApp(config)
+firebase.initializeApp(config)
 
-export default firebaseDb.database()
+export default firebase.database()
 
 // database.ref('/focusAreas').once('value').then(function (snapshot) {
 //   console.log(snapshot.val())
