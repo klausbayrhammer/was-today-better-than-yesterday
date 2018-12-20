@@ -1,6 +1,6 @@
 # was-today-better
 
-> Was today better than yesterday
+See https://was-today-better.firebaseapp.com/
 
 ## Build Setup
 
@@ -24,5 +24,8 @@ npm run unit
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# was-today-better-than-yesterday
+## How to deploy
+
+```
+yarn deploy
+```
