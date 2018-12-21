@@ -1,4 +1,4 @@
-import loadFocusAreas from '@/database/load-focus-areas'
+import {loadFocusAreas} from '@/database/load-focus-areas'
 
 jest.mock('@/database/firebase-db', () => ({
   ref: () => ({
@@ -18,5 +18,9 @@ describe('Load focus areas', () => {
       {id: '0', deleted: false, name: 'TDD'},
       {id: '12312', deleted: false, name: 'PP'}
     ])
+  })
+
+  xit('invokes the onchange callback with transformed focus areas', () => {
+
   })
 })

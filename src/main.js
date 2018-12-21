@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import {loadFocusAreas, onChange} from "./database/load-focus-areas"
+import {loadFocusAreas, onChange} from './database/load-focus-areas'
 
 Vue.config.productionTip = false
 
