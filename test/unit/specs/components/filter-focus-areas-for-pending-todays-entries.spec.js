@@ -20,7 +20,7 @@ describe('filter-focus-areas-for-pending-todays-entries', () => {
 
   it('filters focus areas where there exists an entry for today', () => {
     expect(filterFocusAreasForPendingTodaysEntries([
-      {id: 'id-deleted', deleted: false, entries: {'2018-12-21': -1}},
+      {id: 'id-deleted', deleted: false, entries: {'2018-12-21': 0}},
       {id: 'id', deleted: false}
     ])).toEqual({id: 'id', deleted: false})
   })

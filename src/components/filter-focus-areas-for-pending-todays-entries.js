@@ -1,5 +1,5 @@
 export default focusAreas => {
-  return focusAreas.find(({entries = [], deleted}) => !deleted && !entries[getTodaysDate()])
+  return focusAreas.find(({entries = [], deleted}) => !deleted && !entries.hasOwnProperty(getTodaysDate()))
 }
 
 function getTodaysDate () {
