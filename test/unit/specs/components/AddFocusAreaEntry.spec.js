@@ -41,5 +41,4 @@ describe('AddFocusAreaEntry.vue', () => {
     await Vue.nextTick()
     expect(addEntry).toHaveBeenCalledWith({id: 'id', value: 0})
   })
-
 })
