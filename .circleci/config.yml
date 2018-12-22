@@ -25,5 +25,5 @@ jobs:
 
       - run: yarn lint
       - run: yarn test
-      - run: yarn build
+      - run: NODE_ENV=production yarn build
       - run: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
