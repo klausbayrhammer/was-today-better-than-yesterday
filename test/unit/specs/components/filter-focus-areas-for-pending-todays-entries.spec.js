@@ -1,5 +1,11 @@
 import filterFocusAreasForPendingTodaysEntries from '@/components/filter-focus-areas-for-pending-todays-entries'
 
+function focusAreaWithTodaysEntry () {
+  const entry = {id: 'id-deleted', deleted: false, entries: {'2018-12-21': 0}}
+  entry.entries[new Date().toISOString().split('T')[0]] = 0
+  return entry
+}
+
 describe('filter-focus-areas-for-pending-todays-entries', () => {
   it('returns the empty array if no focus areas are given', () => {
     expect(filterFocusAreasForPendingTodaysEntries([])).toEqual(undefined)
@@ -20,7 +26,7 @@ describe('filter-focus-areas-for-pending-todays-entries', () => {
 
   it('filters focus areas where there exists an entry for today', () => {
     expect(filterFocusAreasForPendingTodaysEntries([
-      {id: 'id-deleted', deleted: false, entries: {'2018-12-21': 0}},
+      focusAreaWithTodaysEntry(),
       {id: 'id', deleted: false}
     ])).toEqual({id: 'id', deleted: false})
   })

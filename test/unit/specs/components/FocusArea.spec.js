@@ -4,6 +4,7 @@ import FocusArea from '@/components/FocusArea'
 import deleteFocusArea from '@/database/delete-focus-area'
 import updateFocusAreaName from '@/database/update-focus-area-description'
 
+jest.mock('@/database/firebase-db', () => {})
 jest.mock('@/database/delete-focus-area')
 jest.mock('@/database/update-focus-area-description')
 
