@@ -2,8 +2,8 @@
   <div class="focus-area-entry">
     <h2 class="focus-area-entry__name">{{name}}</h2>
     <button class="focus-area-entry__better" @click="entry(1)">+</button>
-    <button class="focus-area-entry__worse" @click="entry(-1)">0</button>
-    <button class="focus-area-entry__not-applicable" @click="entry(0)">-</button>
+    <button class="focus-area-entry__not-applicable" @click="entry(0)">0</button>
+    <button class="focus-area-entry__worse" @click="entry(-1)">-</button>
   </div>
 </template>
 
