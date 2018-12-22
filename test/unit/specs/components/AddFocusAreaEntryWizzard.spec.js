@@ -3,6 +3,7 @@ import AddFocusAreaEntryWizzard from '@/components/AddFocusAreaEntryWizzard'
 import filterFocusAreas from '@/components/filter-focus-areas-for-pending-todays-entries'
 
 jest.mock('@/components/filter-focus-areas-for-pending-todays-entries')
+jest.mock('@/database/firebase-db', () => {})
 
 describe('AddFocusAreaEntryWizzard.vue', () => {
   it('renders the focus area entry component', () => {
