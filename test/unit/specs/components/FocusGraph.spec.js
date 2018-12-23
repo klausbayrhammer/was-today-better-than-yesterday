@@ -1,6 +1,7 @@
 import {mount} from '@vue/test-utils'
 import FocusAreaGraph from '@/components/FocusAreaGaph'
 
+jest.mock('cal-heatmap/cal-heatmap.css', () => {})
 describe('FocusAreaGraph.vue', () => {
   it('should render the focus are name', () => {
     const wrapper = mount(FocusAreaGraph, {
