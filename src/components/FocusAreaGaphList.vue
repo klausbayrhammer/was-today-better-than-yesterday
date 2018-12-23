@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div v-for="focusArea in focusAreas">
+      <div v-for="focusArea in focusAreas" v-bind:key="focusArea.id">
         <FocusAreaGraph
           :focusArea="focusArea"/>
       </div>
