@@ -2,6 +2,8 @@ import Vue from 'vue'
 import {mount} from '@vue/test-utils'
 import AddFocusAreaEntry from '@/components/AddFocusAreaEntry'
 
+jest.mock('@/database/load-focus-areas', () => {})
+
 describe('AddFocusAreaEntry.vue', () => {
   it('renders the focus area entry component', () => {
     const wrapper = mount(AddFocusAreaEntry, {

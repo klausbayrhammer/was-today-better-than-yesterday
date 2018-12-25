@@ -18,4 +18,3 @@ firebase.database().ref('/focusAreas').once('value').then(function (snapshot) {
   console.log(snapshot.val())
 })
 
-console.log('xxxx')
