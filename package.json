@@ -16,6 +16,8 @@
   "dependencies": {
     "cal-heatmap": "3.6.2",
     "firebase": "^5.7.0",
+    "firebaseui": "^3.5.1",
+    "proxyquire": "^2.1.0",
     "uuid": "^3.3.2",
     "vue": "2.5.20",
     "vue-router": "^3.0.2"
