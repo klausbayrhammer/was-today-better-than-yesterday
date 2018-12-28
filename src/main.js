@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import {loadFocusAreas} from './database/load-focus-areas'
 import VueRouter from 'vue-router'
-import FocusAreaList from './components/FocusAreaList'
 import AddFocusAreaEntryWizzard from './components/AddFocusAreaEntryWizzard'
 import FocusAreGraphList from './components/FocusAreaGaphList'
+import Maintenance from './pages/Maintenance'
 import Auth from './components/Auth'
 import {signInCallback} from './auth/auth'
 
@@ -16,7 +16,7 @@ async function loadApp () {
   const routes = [
     {path: '/graph', component: FocusAreGraphList, props: {focusAreas}},
     {path: '/', component: AddFocusAreaEntryWizzard, props: {focusAreas}},
-    {path: '/edit-focus-areas', component: FocusAreaList, props: {initialFocusAreas: focusAreas}}
+    {path: '/edit-focus-areas', component: Maintenance}
   ]
 
   const router = new VueRouter({routes})
@@ -43,7 +43,7 @@ async function loadApp () {
         <ul>
           <li><router-link to="/">Enter todays values for focus-areas</router-link></li>
           <li><router-link to="/graph">Graph</router-link></li>
-          <li><router-link to="/edit-focus-areas">Edit Focus Areas</router-link></li>
+          <li><router-link to="/edit-focus-areas">Maintenance</router-link></li>
         </ul>
         <router-view></router-view>
       </div>
