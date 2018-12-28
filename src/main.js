@@ -4,8 +4,8 @@ import Vue from 'vue'
 import {loadFocusAreas} from './database/load-focus-areas'
 import VueRouter from 'vue-router'
 import AddFocusAreaEntryWizzard from './components/AddFocusAreaEntryWizzard'
-import FocusAreGraphList from './components/FocusAreaGaphList'
 import Maintenance from './pages/Maintenance'
+import Graph from './pages/Graph'
 import Auth from './components/Auth'
 import {signInCallback} from './auth/auth'
 
@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 async function loadApp () {
   let focusAreas = await loadFocusAreas()
   const routes = [
-    {path: '/graph', component: FocusAreGraphList, props: {focusAreas}},
+    {path: '/graph', component: Graph},
     {path: '/', component: AddFocusAreaEntryWizzard, props: {focusAreas}},
     {path: '/edit-focus-areas', component: Maintenance}
   ]

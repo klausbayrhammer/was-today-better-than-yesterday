@@ -1,15 +1,9 @@
 import {mount} from '@vue/test-utils'
 import FocusAreaGraphList from '@/components/FocusAreaGaphList'
 
-jest.mock('cal-heatmap/cal-heatmap.css', () => {})
-jest.mock('cal-heatmap', () => ({
+jest.mock('@/components/cal-heatmap', () => ({
   __esModule: true,
-  default: function () {
-    return {
-      init: () => {
-      }
-    }
-  }
+  default: () => {}
 }))
 describe('FocusAreaGraphList.vue', () => {
   it('should render all focus area graphs', () => {

@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import CalHeatMap from 'cal-heatmap'
-import 'cal-heatmap/cal-heatmap.css'
 import transformEntriesToCalHeatmap from './transform-entries-to-cal-heatmap-format'
+import calHeatmap from './cal-heatmap'
+
 export default {
   name: 'FocusAreaGaph',
   props: ['focusArea'],
@@ -19,21 +19,7 @@ export default {
   },
   mounted () {
     this.$nextTick(function () {
-      const cal = new CalHeatMap()
-      cal.init({
-        itemSelector: `.${this.graphSelectorClass}`,
-        data: transformEntriesToCalHeatmap(this.focusArea.entries),
-        domain: 'month',
-        subdomain: 'day',
-        cellSize: 10,
-        range: 12,
-        start: new Date('2018-11-11'),
-        legend: [-0.1, 0, 0.1],
-        legendColors: {
-          min: 'red',
-          max: 'green'
-        }
-      })
+      calHeatmap(`.${this.graphSelectorClass}`, transformEntriesToCalHeatmap(this.focusArea.entries))
     })
   }
 }

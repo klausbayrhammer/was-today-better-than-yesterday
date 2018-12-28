@@ -1,6 +1,6 @@
 import {mount} from '@vue/test-utils'
-import Maintenance from '@/pages/Maintenance'
-import FocusAreaList from '@/components/FocusAreaList'
+import Graph from '@/pages/Graph'
+import FocusGraphList from '@/components/FocusAreaGaphList'
 
 let mockOnChangeCB
 jest.mock('@/database/load-focus-areas', () => ({
@@ -10,26 +10,31 @@ jest.mock('@/database/load-focus-areas', () => ({
 }))
 jest.mock('@/database/firebase-db', () => {})
 
-describe('Maintenance.vue', () => {
+jest.mock('@/components/cal-heatmap', () => ({
+  __esModule: true,
+  default: () => {}
+}))
+
+describe('Graph.vue', () => {
   it('renders a loading indicator until data is loaded', () => {
-    const wrapper = mount(Maintenance)
+    const wrapper = mount(Graph)
     expect(wrapper.find('.maintenance__loading').exists()).toBeTruthy()
   })
   it('does not render a loading indicator when data is available', async () => {
-    const wrapper = mount(Maintenance)
+    const wrapper = mount(Graph)
     mockOnChangeCB([{}])
     expect(wrapper.find('.maintenance__loading').exists()).toBeFalsy()
   })
-  it('renders a focus area list', async () => {
-    const initialFocusAreas = [{
+  it('renders a focus Graph list', async () => {
+    const focusAreas = [{
       initialFocusAreas: [
         {name: 'Punctuality', deleted: false}
       ]
     }]
 
-    const wrapper = mount(Maintenance)
-    mockOnChangeCB(initialFocusAreas)
+    const wrapper = mount(Graph, {stubs: {}})
+    mockOnChangeCB(focusAreas)
 
-    expect(wrapper.find(FocusAreaList).props().initialFocusAreas).toEqual(initialFocusAreas)
+    expect(wrapper.find(FocusGraphList).props().focusAreas).toEqual(focusAreas)
   })
 })
