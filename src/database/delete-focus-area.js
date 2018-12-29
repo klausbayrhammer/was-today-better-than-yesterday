@@ -1,2 +1,3 @@
 import firebaseDB from './firebase-db'
-export default ({id, deleted}) => firebaseDB.ref(`/focusAreas/${id}/deleted`).set(deleted)
+import {getCurrentUser} from '../auth/auth'
+export default ({id, deleted}) => firebaseDB.ref(`/${getCurrentUser()}/focusAreas/${id}/deleted`).set(deleted)

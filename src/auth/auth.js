@@ -1,7 +1,16 @@
 import firebase from 'firebase'
 
+let loggedInUser
+
 function signInCallback (signInCallback) {
-  firebase.auth().onAuthStateChanged(user => signInCallback(!!user))
+  firebase.auth().onAuthStateChanged(user => {
+    loggedInUser = user
+    return signInCallback(!!user)
+  })
 }
 
-export {signInCallback}
+function getCurrentUser () {
+  return loggedInUser.email.replace(/\./g, '')
+}
+
+export {signInCallback, getCurrentUser}

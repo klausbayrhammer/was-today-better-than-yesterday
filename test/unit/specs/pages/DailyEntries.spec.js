@@ -10,6 +10,10 @@ jest.mock('@/database/load-focus-areas', () => ({
   }
 }))
 jest.mock('@/database/firebase-db', () => {})
+jest.mock('@/components/cal-heatmap', () => ({
+  __esModule: true,
+  default: () => {}
+}))
 
 describe('DailyEntries.vue', () => {
   it('renders a loading indicator until data is loaded', () => {

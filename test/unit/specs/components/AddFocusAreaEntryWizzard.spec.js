@@ -11,7 +11,6 @@ jest.mock('@/components/cal-heatmap', () => ({
   default: () => {}
 }))
 
-
 describe('AddFocusAreaEntryWizzard.vue', () => {
   it('renders the focus area entry component', () => {
     filterFocusAreas.mockImplementation(focusAreas => ({

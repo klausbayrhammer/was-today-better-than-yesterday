@@ -10,6 +10,9 @@ jest.mock('@/database/firebase-db', () => ({
   })
 })
 )
+jest.mock('@/auth/auth', () => ({
+  getCurrentUser: () => 'user'
+}))
 
 describe('Load focus areas', () => {
   it('returns transformed focusareas', done => {
