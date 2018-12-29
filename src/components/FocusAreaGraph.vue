@@ -10,7 +10,7 @@ import transformEntriesToCalHeatmap from './transform-entries-to-cal-heatmap-for
 import calHeatmap from './cal-heatmap'
 
 export default {
-  name: 'FocusAreaGaph',
+  name: 'FocusAreaGraph',
   props: ['focusArea'],
   computed: {
     graphSelectorClass: function () {

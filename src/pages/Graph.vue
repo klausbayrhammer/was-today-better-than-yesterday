@@ -7,7 +7,7 @@
 
 <script>
 import {onChange} from '../database/load-focus-areas'
-import FocusGraphList from '../components/FocusAreaGaphList'
+import FocusGraphList from '../components/FocusAreaGraphList'
 import Loading from '../components/Loading'
 
 export default {

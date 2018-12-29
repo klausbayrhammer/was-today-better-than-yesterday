@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import FocusAreaGraph from '@/components/FocusAreaGaph'
+import FocusAreaGraph from '@/components/FocusAreaGraph'
 
 jest.mock('@/components/cal-heatmap', () => ({
   __esModule: true,

@@ -1,6 +1,6 @@
 import {mount} from '@vue/test-utils'
 import Graph from '@/pages/Graph'
-import FocusGraphList from '@/components/FocusAreaGaphList'
+import FocusGraphList from '@/components/FocusAreaGraphList'
 import Loading from '@/components/Loading'
 
 let mockOnChangeCB

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import FocusAreaGraph from './FocusAreaGaph'
+import FocusAreaGraph from './FocusAreaGraph'
 export default {
-  name: 'FocusAreaGaphList',
+  name: 'FocusAreaGraphList',
   props: ['focusAreas'],
   components: {
     FocusAreaGraph
