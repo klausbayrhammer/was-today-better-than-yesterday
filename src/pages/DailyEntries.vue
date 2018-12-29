@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="isLoading" class="maintenance__loading"></div>
+    <Loading v-if="isLoading" />
     <AddFocusAreaEntryWizzard v-else v-bind:focus-areas="focusAreas"/>
   </div>
 </template>
@@ -8,11 +8,13 @@
 <script>
 import {onChange} from '../database/load-focus-areas'
 import AddFocusAreaEntryWizzard from '../components/AddFocusAreaEntryWizzard'
+import Loading from '../components/Loading'
 
 export default {
   name: 'DailyEntries',
   components: {
-    AddFocusAreaEntryWizzard
+    AddFocusAreaEntryWizzard,
+    Loading
   },
   data () {
     return {

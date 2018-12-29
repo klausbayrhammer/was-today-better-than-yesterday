@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="isLoading" class="maintenance__loading"></div>
+    <Loading v-if="isLoading" />
     <FocusAreaList v-else v-bind:initial-focus-areas="focusAreas"/>
   </div>
 </template>
@@ -8,11 +8,13 @@
 <script>
 import {onChange} from '../database/load-focus-areas'
 import FocusAreaList from '../components/FocusAreaList'
+import Loading from '../components/Loading'
 
 export default {
   name: 'Maintenance',
   components: {
-    FocusAreaList
+    FocusAreaList,
+    Loading
   },
   data () {
     return {

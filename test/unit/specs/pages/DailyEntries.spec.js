@@ -1,6 +1,7 @@
 import {mount} from '@vue/test-utils'
 import DailyEntries from '@/pages/DailyEntries'
 import AddFocusAreaEntryWizzard from '@/components/AddFocusAreaEntryWizzard'
+import Loading from '@/components/Loading'
 
 let mockOnChangeCB
 jest.mock('@/database/load-focus-areas', () => ({
@@ -13,12 +14,12 @@ jest.mock('@/database/firebase-db', () => {})
 describe('DailyEntries.vue', () => {
   it('renders a loading indicator until data is loaded', () => {
     const wrapper = mount(DailyEntries)
-    expect(wrapper.find('.maintenance__loading').exists()).toBeTruthy()
+    expect(wrapper.find(Loading).exists()).toBeTruthy()
   })
   it('does not render a loading indicator when data is available', async () => {
     const wrapper = mount(DailyEntries)
     mockOnChangeCB([{}])
-    expect(wrapper.find('.maintenance__loading').exists()).toBeFalsy()
+    expect(wrapper.find(Loading).exists()).toBeFalsy()
   })
   it('renders a AddFocusAreaEntryWizzard after loading is done', async () => {
     const focusAreas = [{

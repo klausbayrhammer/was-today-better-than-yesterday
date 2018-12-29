@@ -1,6 +1,7 @@
 import {mount} from '@vue/test-utils'
 import Graph from '@/pages/Graph'
 import FocusGraphList from '@/components/FocusAreaGaphList'
+import Loading from '@/components/Loading'
 
 let mockOnChangeCB
 jest.mock('@/database/load-focus-areas', () => ({
@@ -18,12 +19,12 @@ jest.mock('@/components/cal-heatmap', () => ({
 describe('Graph.vue', () => {
   it('renders a loading indicator until data is loaded', () => {
     const wrapper = mount(Graph)
-    expect(wrapper.find('.maintenance__loading').exists()).toBeTruthy()
+    expect(wrapper.find(Loading).exists()).toBeTruthy()
   })
   it('does not render a loading indicator when data is available', async () => {
     const wrapper = mount(Graph)
     mockOnChangeCB([{}])
-    expect(wrapper.find('.maintenance__loading').exists()).toBeFalsy()
+    expect(wrapper.find(Loading).exists()).toBeFalsy()
   })
   it('renders a focus Graph list', async () => {
     const focusAreas = [{
