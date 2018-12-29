@@ -1,42 +1,39 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import {loadFocusAreas} from './database/load-focus-areas'
 import VueRouter from 'vue-router'
-import AddFocusAreaEntryWizzard from './components/AddFocusAreaEntryWizzard'
 import Maintenance from './pages/Maintenance'
 import Graph from './pages/Graph'
+import DailyEntries from './pages/DailyEntries'
 import Auth from './components/Auth'
 import {signInCallback} from './auth/auth'
 
 Vue.use(VueRouter)
 
-async function loadApp () {
-  let focusAreas = await loadFocusAreas()
-  const routes = [
-    {path: '/graph', component: Graph},
-    {path: '/', component: AddFocusAreaEntryWizzard, props: {focusAreas}},
-    {path: '/edit-focus-areas', component: Maintenance}
-  ]
+const routes = [
+  {path: '/graph', component: Graph},
+  {path: '/', component: DailyEntries},
+  {path: '/edit-focus-areas', component: Maintenance}
+]
 
-  const router = new VueRouter({routes})
-  Vue.config.productionTip = false
+const router = new VueRouter({routes})
+Vue.config.productionTip = false
 
-  /* eslint-disable no-new */
-  new Vue({
-    router,
-    components: {
-      Auth
-    },
-    data: {
-      signedIn: false
-    },
-    created () {
-      signInCallback(signedIn => {
-        this.signedIn = signedIn
-      })
-    },
-    template: `
+/* eslint-disable no-new */
+new Vue({
+  router,
+  components: {
+    Auth
+  },
+  data: {
+    signedIn: false
+  },
+  created () {
+    signInCallback(signedIn => {
+      this.signedIn = signedIn
+    })
+  },
+  template: `
     <div id="app">
       <h1>Was today better than yesterday?</h1>
       <div v-if="signedIn">
@@ -52,7 +49,4 @@ async function loadApp () {
       </div>
     </div>
   `
-  }).$mount('#app')
-}
-
-loadApp()
+}).$mount('#app')

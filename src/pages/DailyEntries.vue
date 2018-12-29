@@ -1,18 +1,18 @@
 <template>
   <div>
     <div v-if="isLoading" class="maintenance__loading"></div>
-    <FocusGraphList v-else v-bind:focus-areas="focusAreas"/>
+    <AddFocusAreaEntryWizzard v-else v-bind:focus-areas="focusAreas"/>
   </div>
 </template>
 
 <script>
 import {onChange} from '../database/load-focus-areas'
-import FocusGraphList from '../components/FocusAreaGaphList'
+import AddFocusAreaEntryWizzard from '../components/AddFocusAreaEntryWizzard'
 
 export default {
-  name: 'Graph',
+  name: 'DailyEntries',
   components: {
-    FocusGraphList
+    AddFocusAreaEntryWizzard
   },
   data () {
     return {
@@ -28,3 +28,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>
