@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Edit Focus Areas</h2>
     <ul>
       <FocusArea
           v-for="focusArea in focusAreas"
@@ -35,7 +36,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -6,6 +6,8 @@ import Maintenance from './pages/Maintenance'
 import Graph from './pages/Graph'
 import DailyEntries from './pages/DailyEntries'
 import Auth from './components/Auth'
+import Navigation from './components/Navigation'
+
 import {signInCallback} from './auth/auth'
 
 Vue.use(VueRouter)
@@ -23,7 +25,8 @@ Vue.config.productionTip = false
 new Vue({
   router,
   components: {
-    Auth
+    Auth,
+    Navigation
   },
   data: {
     signedIn: false
@@ -35,14 +38,11 @@ new Vue({
   },
   template: `
     <div id="app">
-      <h1>Was today better than yesterday?</h1>
       <div v-if="signedIn">
-        <ul>
-          <li><router-link to="/">Enter todays values for focus-areas</router-link></li>
-          <li><router-link to="/graph">Graph</router-link></li>
-          <li><router-link to="/edit-focus-areas">Maintenance</router-link></li>
-        </ul>
-        <router-view></router-view>
+        <Navigation />
+        <div style="width:80%; margin: 0 auto; padding-top: 20px">
+          <router-view></router-view>
+        </div>
       </div>
       <div v-else>
         <Auth />

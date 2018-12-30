@@ -7,7 +7,7 @@
       v-bind:add-entry="addEntry"/>
     <div v-else>
       <span class="add-focus-area-entry-wizzard__done">Done for today</span>
-      <FocusAreaGraohList v-bind:focus-areas="focusAreas"/>
+      <FocusAreaGraphList v-bind:focus-areas="focusAreas"/>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@
 import AddFocusAreaEntry from './AddFocusAreaEntry'
 import addEntry from '../database/add-entry'
 import filterFocusAreas from './filter-focus-areas-for-pending-todays-entries'
-import FocusAreaGraohList from './FocusAreaGraphList'
+import FocusAreaGraphList from './FocusAreaGraphList'
 
 export default {
   name: 'AddFocusAreaEntryWizzard',
@@ -31,11 +31,7 @@ export default {
   },
   components: {
     AddFocusAreaEntry,
-    FocusAreaGraohList
+    FocusAreaGraphList
   }
 }
 </script>
-
-<style scoped>
-
-</style>
