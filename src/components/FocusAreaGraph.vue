@@ -6,8 +6,7 @@
 </template>
 
 <script>
-import transformEntriesToCalHeatmap from './transform-entries-to-cal-heatmap-format'
-import calHeatmap from './cal-heatmap'
+import calHeatmap from './cal-heatmap/cal-heatmap'
 
 export default {
   name: 'FocusAreaGraph',
@@ -19,8 +18,13 @@ export default {
   },
   mounted () {
     this.$nextTick(function () {
-      calHeatmap(`.${this.graphSelectorClass}`, transformEntriesToCalHeatmap(this.focusArea.entries))
+      calHeatmap(`.${this.graphSelectorClass}`, this.focusArea.entries)
     })
   }
 }
 </script>
+<style scoped>
+ .focus-area-graph {
+   padding-bottom: 40px;
+ }
+</style>

@@ -6,7 +6,7 @@ import FocusAreaGraphList from '@/components/FocusAreaGraphList'
 
 jest.mock('@/components/filter-focus-areas-for-pending-todays-entries')
 jest.mock('@/database/firebase-db', () => {})
-jest.mock('@/components/cal-heatmap', () => ({
+jest.mock('@/components/cal-heatmap/cal-heatmap', () => ({
   __esModule: true,
   default: () => {}
 }))

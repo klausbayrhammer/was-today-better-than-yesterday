@@ -1,4 +1,4 @@
-import transform from '@/components/transform-entries-to-cal-heatmap-format'
+import transform from '@/components/cal-heatmap/transform-entries-to-cal-heatmap-format'
 
 describe('transform-entries-to-cal-heatmap-format', () => {
   it('transforms data entries to cal-heatmap specific format', () => {
