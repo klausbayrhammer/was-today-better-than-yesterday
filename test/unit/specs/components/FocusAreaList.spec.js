@@ -3,6 +3,7 @@ import FocusAreaList from '@/components/FocusAreaList'
 
 jest.mock('uuid/v4', () => () => 'id1')
 jest.mock('@/database/firebase-db', () => {})
+jest.mock('skeleton-checkboxes/skeleton-checkboxes.css', () => {})
 
 describe('FocusAreaList.vue', () => {
   it('should render all focus points', () => {

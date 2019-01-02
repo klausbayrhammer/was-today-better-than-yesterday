@@ -7,6 +7,7 @@ import updateFocusAreaName from '@/database/update-focus-area-description'
 jest.mock('@/database/firebase-db', () => {})
 jest.mock('@/database/delete-focus-area')
 jest.mock('@/database/update-focus-area-description')
+jest.mock('skeleton-checkboxes/skeleton-checkboxes.css', () => {})
 
 describe('FocusArea.vue', () => {
   it('shows the name of the focus are', () => {

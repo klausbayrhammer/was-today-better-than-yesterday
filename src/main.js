@@ -40,7 +40,7 @@ new Vue({
     <div id="app">
       <div v-if="signedIn">
         <Navigation />
-        <div style="width:80%; margin: 0 auto; padding-top: 20px">
+        <div class="container" style="padding-top:20px">
           <router-view></router-view>
         </div>
       </div>

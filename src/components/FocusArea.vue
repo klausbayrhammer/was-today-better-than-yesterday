@@ -1,16 +1,21 @@
 <template>
   <li class="focus-area row">
-    <input class="focus-area__name-field three columns" type="text" v-if="editMode" v-model="name" @change="updateDescription" />
-    <span class="focus-area__name three columns" v-else @click="toggleEdit" >{{name}}</span>
-    <input class="focus-area__deleted one column"
-           type="checkbox"
-           v-model="deleted" />
+    <span class="focus-area__deleted-container">
+        <input class="focus-area__deleted"
+               type="checkbox"
+               v-bind:id="id"
+               v-model="deleted"/>
+        <label v-bind:for="id"></label>
+      </span>
+    <input class="focus-area__name-field" type="text" v-if="editMode" v-model="name" @change="updateDescription"/>
+    <span class="focus-area__name" v-if="!editMode" @click="toggleEdit">{{name}}</span>
   </li>
 </template>
 
 <script>
 import deleteFocusArea from '../database/delete-focus-area'
 import updateFocusAreaDescription from '../database/update-focus-area-description'
+import 'skeleton-checkboxes/skeleton-checkboxes.css'
 
 export default {
   name: 'FocusArea',
@@ -40,7 +45,15 @@ export default {
 </script>
 
 <style scoped>
-.focus-area {
-  list-style: none;
-}
+  .focus-area {
+    list-style: none;
+  }
+
+  .focus-area__deleted-container {
+    padding-right: 20px;
+  }
+
+  .focus-area {
+    height: 54px;
+  }
 </style>

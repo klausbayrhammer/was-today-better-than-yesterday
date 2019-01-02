@@ -10,6 +10,7 @@ jest.mock('@/database/load-focus-areas', () => ({
   }
 }))
 jest.mock('@/database/firebase-db', () => {})
+jest.mock('skeleton-checkboxes/skeleton-checkboxes.css', () => {})
 
 describe('Maintenance.vue', () => {
   it('renders a loading indicator until data is loaded', () => {
