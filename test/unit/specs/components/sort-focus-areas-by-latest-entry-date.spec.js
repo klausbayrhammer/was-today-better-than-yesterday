@@ -28,4 +28,13 @@ describe('sort-focus-areas-by-latest-entry', () => {
       {id: 1}
     ])
   })
+  it('moves focus areas with entries only containing value 0 to the end of the list', () => {
+    expect(sortFocusAreasByLatestEntry([
+      {id: 1, entries: {'2018-02-02': 0}},
+      {id: 2, entries: {'2018-01-01': 1}}
+    ])).toEqual([
+      {id: 2, entries: {'2018-01-01': 1}},
+      {id: 1, entries: {'2018-02-02': 0}}
+    ])
+  })
 })
