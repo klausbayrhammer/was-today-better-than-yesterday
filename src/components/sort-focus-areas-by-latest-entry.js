@@ -6,6 +6,6 @@ function getLatestEntryDate (a) {
   return new Date(keysWithoutEntriesValueZero.sort()[keysWithoutEntriesValueZero.length - 1])
 }
 
-export default entries => {
+export default function (entries) {
   return entries.sort((a, b) => getLatestEntryDate(b) - getLatestEntryDate(a))
 }
