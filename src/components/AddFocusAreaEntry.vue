@@ -3,7 +3,7 @@
     <h2 class="focus-area-entry__name">{{name}}</h2>
     <div class="focus-area-entry__list">
       <i class="large material-icons focus-area-entry__item focus-area-entry__better" @click="entry(1)">thumb_up</i>
-      <i class="large material-icons focus-area-entry__item focus-area-entry__not-applicable" @click="entry(0)">trending_flat</i>
+      <i class="large material-icons focus-area-entry__item focus-area-entry__not-applicable" @click="entry(0)">not_interested</i>
       <i class="large material-icons focus-area-entry__item focus-area-entry__worse" @click="entry(-1)">thumb_down</i>
     </div>
   </div>
@@ -25,6 +25,7 @@ export default {
  .focus-area-entry__item {
    font-size: 80px;
    cursor: pointer;
+   padding-bottom: 30px;
  }
   .focus-area-entry__list {
     display: flex;
