@@ -10,7 +10,7 @@ function signInCallback (signInCallback) {
 }
 
 function getCurrentUser () {
-  return loggedInUser.email.replace(/\./g, '')
+  return loggedInUser.uid
 }
 
 export {signInCallback, getCurrentUser}

@@ -19,8 +19,8 @@ describe('auth', () => {
     mockOnAuthStateChanged({email: 'x@x.x'})
   })
   it('get active user returns current user', () => {
-    const user = {email: 'user.x@x.x'}
+    const user = {uid: 'uid'}
     mockOnAuthStateChanged(user)
-    expect(getCurrentUser()).toEqual('userx@xx')
+    expect(getCurrentUser()).toEqual('uid')
   })
 })
