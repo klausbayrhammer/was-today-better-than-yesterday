@@ -9,8 +9,7 @@ import firebase from 'firebase/app'
 
 const uiConfig = {
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID
   ]
 }
 
