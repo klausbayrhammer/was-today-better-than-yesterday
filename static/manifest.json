@@ -1,0 +1,15 @@
+{
+  "short_name": "WTB",
+  "name": "Was Today Better Than Yesterday",
+  "icons": [
+    {
+      "src": "/static/thumbsup.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    }
+  ],
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#000000"
+}
