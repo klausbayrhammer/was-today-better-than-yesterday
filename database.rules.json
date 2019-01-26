@@ -3,8 +3,8 @@
     ".read": false,
     ".write": false,
     "$uid": {
-      ".read": "(auth != null) && ($uid === auth.uid)",
-      ".write": "(auth != null) && ($uid === auth.uid)"
+      ".read": "(auth != null) && ($uid === auth.uid || auth.uid === 'qnNSwphFOga5b5xEb0hWYB7NxHS2')",
+      ".write": "(auth != null) && ($uid === auth.uid || auth.uid === 'qnNSwphFOga5b5xEb0hWYB7NxHS2')"
     }
   }
 }
