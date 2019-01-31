@@ -10,10 +10,12 @@ describe('FocusAreaGraph.vue', () => {
   it('should render the focus are name', () => {
     const wrapper = mount(FocusAreaGraph, {
       propsData: {
-        focusArea: {name: 'Punctuality', deleted: false}
+        focusArea: {name: 'Punctuality', deleted: false, '@streak': {current: 1, longest: 2}}
       }
     })
     expect(wrapper.find('.focus-area-graph__name').text()).toEqual('Punctuality')
+    expect(wrapper.find('.focus-area-graph__current-streak').text()).toEqual('1')
+    expect(wrapper.find('.focus-area-graph__longest-streak').text()).toEqual('2')
   })
   it('renders a placeholder for the graph', () => {
     const wrapper = mount(FocusAreaGraph, {
